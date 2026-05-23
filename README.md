@@ -16,6 +16,15 @@ pip install -r requirements.txt   # optional, for verify script
 python scripts/verify_workspace.py
 ```
 
+**Freeway duel dashboard** (runs demo-eval in both code repos; needs trained checkpoints):
+
+```bash
+pip install -r requirements.txt
+python scripts/freeway_duel_dashboard.py
+```
+
+Use `--no-gui` for headless polling; `--episodes`, `--fps`, and `--max-steps-per-episode` adjust the run.
+
 ## Layout
 
 ```

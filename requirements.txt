@@ -1,2 +1,4 @@
-# Hub tooling only (verify_workspace.py)
+# Hub tooling (verify_workspace.py, freeway_duel_dashboard.py)
 pyyaml>=6.0
+matplotlib>=3.8
+Pillow>=10.0
