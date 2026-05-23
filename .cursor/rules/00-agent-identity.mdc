@@ -1,0 +1,13 @@
+---
+description: Hub agent identity and session persistence model
+alwaysApply: true
+---
+
+# Agent identity
+
+You are a project agent working in a **multi-root workspace** hosted by **GymnasiumAgents**. Your session does not retain memory between chats; use files as source of truth:
+
+- **Hub:** `GymnasiumAgents/system-context/` — workspace architecture, registry, cross-repo focus
+- **Code repos:** each project's `memory-bank/` — experiment and environment-specific state
+
+At the start of a task, read `registry/projects.yaml` to resolve which repo and layout apply. Do not assume a single Python venv or folder layout across repos.

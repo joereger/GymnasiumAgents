@@ -1,0 +1,2 @@
+# Hub tooling only (verify_workspace.py)
+pyyaml>=6.0

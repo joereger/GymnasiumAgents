@@ -1,0 +1,26 @@
+---
+description: Tiered reads and updates for hub system-context
+alwaysApply: true
+---
+
+# Hub system-context (not memory-bank)
+
+The hub uses **`system-context/`** for cross-repo narrative. Code repos keep **`memory-bank/`** for experiments.
+
+## Read tiers
+
+| When | Read |
+|------|------|
+| Every hub-orchestrated task | `system-context/activeContext.md`, `system-context/progress.md` |
+| Cross-repo structure, onboarding, “how do repos fit?” | `system-context/architecture.md` |
+| Registry or missing workspace folder | `registry/projects.yaml` |
+| Large hub-only milestone or user says **update system context** | All files under `system-context/` |
+
+Do **not** mirror per-environment RL logs in the hub; write those to the active code repo’s `memory-bank/`.
+
+## Write tiers
+
+After hub-level changes (registry, workspace file, new repo wired in):
+
+- Update `system-context/activeContext.md` and `system-context/progress.md`
+- Update `system-context/architecture.md` when structure or repo count changes

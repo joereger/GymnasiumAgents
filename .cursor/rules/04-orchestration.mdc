@@ -1,0 +1,18 @@
+---
+description: When to delegate to ai-rl-sme vs dev subagents
+alwaysApply: true
+---
+
+# Orchestration
+
+Subagent definitions live in `.cursor/agents/`.
+
+| Work type | Delegate to |
+|-----------|-------------|
+| Train/eval, rewards, checkpoints, logs, hyperparameters, approach comparison | **ai-rl-sme** |
+| Refactors, packaging, typing, tests, CLI, `common/` API, dependencies | **dev** |
+| Both | **dev** implements; **ai-rl-sme** runs experiments and updates the code repo `memory-bank/` |
+
+Pass each subagent: target **repo id** from `registry/projects.yaml`, environment name (if any), and paths to tier-1 context files.
+
+After RL work, ensure the code repo `memory-bank/` is updated before closing the task.

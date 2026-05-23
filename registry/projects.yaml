@@ -1,0 +1,39 @@
+# Canonical list of code repos for this multi-root workspace.
+# Paths are relative to GymnasiumAgents/ (the hub root).
+# folder_name must match the "name" field in GymnasiumAgents.code-workspace.
+
+workspace:
+  hub_id: gymnasium_agents
+  workspace_file: GymnasiumAgents.code-workspace
+
+projects:
+  - id: gynasium
+    name: Gynasium
+    folder_name: Gynasium
+    relative_path: ../Gynasium
+    required: true
+    layout: per_env_self_contained
+    context_dir: memory-bank
+    venv: GymnasiumVENV/bin/python
+    description: Classic control, lunar lander, mountain car, bipedal walker, and legacy Atari scripts per environment folder.
+    environment_dirs:
+      - bipedal_walker
+      - cart_pole
+      - freeway
+      - lunar_lander
+      - mountain_car
+      - pong
+
+  - id: gymnasium_two
+    name: GymnasiumTwo
+    folder_name: GymnasiumTwo
+    relative_path: ../GymnasiumTwo
+    required: true
+    layout: shared_common
+    context_dir: memory-bank
+    venv: .venv/bin/python
+    description: Atari DQN experiments with shared preprocessing in common/.
+    shared_code: common
+    environment_dirs:
+      - pong
+      - freeway

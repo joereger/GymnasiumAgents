@@ -1,0 +1,26 @@
+---
+description: Workspace registry, missing-folder detection, repo resolution
+alwaysApply: true
+---
+
+# Workspace registry
+
+## Canonical config
+
+- **Registry:** `registry/projects.yaml`
+- **Architecture overview:** `system-context/architecture.md`
+
+## At task start
+
+1. If the user’s target repo is unclear, read `registry/projects.yaml` and `system-context/activeContext.md`.
+2. If a required project path from the registry is not present in the workspace, **stop and tell the user** which folder to add to `GymnasiumAgents.code-workspace` (use `folder_name` from the registry). Do not guess paths outside the workspace.
+3. Optional: run `python scripts/verify_workspace.py` from the **GymnasiumAgents** root.
+
+## Resolving the active code repo
+
+| User intent | Repo | Layout |
+|-------------|------|--------|
+| Paths under `Gynasium/` or envs like `bipedal_walker`, `lunar_lander` | Gynasium | `per_env_self_contained` |
+| Paths under `GymnasiumTwo/`, `common/`, Atari DQN scripts | GymnasiumTwo | `shared_common` |
+
+Use the repo’s `venv` from the registry when running Python. See `system-context/architecture.md` for directory conventions.

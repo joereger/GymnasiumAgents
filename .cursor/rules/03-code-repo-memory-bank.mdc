@@ -1,0 +1,28 @@
+---
+description: Tiered memory-bank protocol for Gynasium and GymnasiumTwo
+alwaysApply: true
+---
+
+# Code repo memory-bank
+
+When working inside **Gynasium** or **GymnasiumTwo**, use that repo’s **`memory-bank/`** (see `context_dir` in `registry/projects.yaml`).
+
+## Read tiers
+
+| When | Read |
+|------|------|
+| Every task in a code repo | `memory-bank/activeContext.md`, `memory-bank/progress.md` |
+| Task targets one environment (e.g. `freeway/`, `bipedal_walker/`) | That env’s `memory-bank/environments/<name>/activeContext.md` and `progress.md` |
+| New env, large refactor, or user says **update memory bank** | Full top-level set (`projectbrief`, `productContext`, `systemPatterns`, `techContext`) plus relevant `environments/<name>/` |
+
+## Write tiers (required after substantive work)
+
+- Update `activeContext.md` and `progress.md` (repo and env level as applicable).
+- Record experiments in env `approaches.md`; patterns in `systemPatterns.md` / `techContext.md` when they change.
+
+## Layout rules (from registry)
+
+- **Gynasium (`per_env_self_contained`):** code and helpers under `<env>/`; data under `data/<env>/`. Avoid depending on other env folders.
+- **GymnasiumTwo (`shared_common`):** shared logic in `common/`; per-game code in `pong/`, `freeway/`; data under `data/<game>/`.
+
+Agents **must** edit memory-bank files directly in the repo (no MCP-only restriction).

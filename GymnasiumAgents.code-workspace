@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "GymnasiumAgents"
+    },
+    {
+      "path": "../Gynasium",
+      "name": "Gynasium"
+    },
+    {
+      "path": "../GymnasiumTwo",
+      "name": "GymnasiumTwo"
+    }
+  ],
+  "settings": {
+    "python.analysis.extraPaths": [],
+    "files.exclude": {
+      "**/__pycache__": true
+    }
+  }
+}
